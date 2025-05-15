@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Game Mods Hub - Unlock Exclusive Features!</title>
+    <title>بريميوم جيم مودز - ميزات حصرية مجانية!</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-        
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap');
         :root {
             --primary-color: #00c6ff;
             --secondary-color: #0072ff;
@@ -16,16 +15,17 @@
             --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
             --text-light: rgba(255, 255, 255, 0.9);
             --trending-color: #ff4d4d;
+            --success-color: #2ecc71;
         }
         
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+            font-family: 'Tajawal', sans-serif;
         }
         
         body {
-            font-family: 'Roboto', sans-serif;
             padding: 12px;
             background: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
             color: white;
@@ -34,52 +34,41 @@
             flex-direction: column;
         }
         
-        /* قائمة الهامبرجر */
+        /* القائمة */
         .menu-btn {
             position: fixed;
-            top: 40px;
-            left: 20px;
+            top: 20px;
+            right: 20px;
             cursor: pointer;
             z-index: 1000;
-            background: transparent !important;
+            background: transparent;
             color: white;
-            border: none !important;
+            border: none;
             font-size: 24px;
             padding: 8px 12px;
-            border-radius: 0;
             transition: all 0.3s ease;
-            backdrop-filter: none !important;
-            box-shadow: none !important;
         }
         
-        .menu-btn:hover {
-            background: rgba(0, 198, 255, 0.4);
-        }
-        
-        /* القائمة الجانبية */
         .sidebar {
             position: fixed;
             top: 0;
-            left: -300px;
+            right: -300px;
             width: 250px;
             height: 100%;
             background: linear-gradient(145deg, #1a1a2e 0%, #0f3460 100%);
             transition: all 0.3s ease;
             z-index: 999;
             padding: 60px 20px 20px;
-            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
             overflow-y: auto;
         }
         
         .sidebar.active {
-            left: 0;
+            right: 0;
         }
         
-        /* روابط القائمة */
         .sidebar ul {
             list-style: none;
-            padding: 0;
-            margin: 0;
         }
         
         .sidebar ul li {
@@ -99,37 +88,10 @@
         
         .sidebar ul li a:hover {
             background: rgba(0, 198, 255, 0.3);
-            transform: translateX(5px);
+            transform: translateX(-5px);
         }
         
-        /* أيقونة الإنستجرام */
-        .instagram-icon {
-            position: fixed;
-            top: 53px;
-            right: 20px;
-            z-index: 1000;
-            width: 30px;
-            height: 30px;
-            background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 0 10px rgba(0, 150, 255, 0.5);
-            transition: all 0.3s ease;
-        }
-        
-        .instagram-icon:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 15px rgba(0, 150, 255, 0.8);
-        }
-        
-        .instagram-icon svg {
-            width: 18px;
-            height: 18px;
-            fill: white;
-        }
-        
+        /* الهيدر */
         .header {
             text-align: center;
             margin-bottom: 25px;
@@ -137,34 +99,39 @@
         }
         
         .logo {
-            font-size: 18px;
+            font-size: 22px;
             font-weight: 700;
             color: var(--primary-color);
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             text-shadow: 0 0 15px rgba(0, 198, 255, 0.7);
             letter-spacing: 0.5px;
             line-height: 1.4;
-            padding: 0 10px;
         }
         
+        .subtitle {
+            color: var(--text-light);
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        /* البحث */
         .search-container {
             text-align: center;
-            margin-bottom: 15px;
-            padding: 0 5px;
+            margin-bottom: 20px;
         }
         
         .search-box {
             background: rgba(255, 255, 255, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 20px;
-            padding: 10px 15px;
+            padding: 12px 20px;
             width: 100%;
+            max-width: 500px;
             color: white;
             font-size: 14px;
             outline: none;
             box-shadow: 0 0 10px rgba(0, 150, 255, 0.3);
             transition: all 0.3s ease;
-            font-family: 'Roboto', sans-serif;
         }
         
         .search-box:focus {
@@ -172,6 +139,7 @@
             border-color: var(--primary-color);
         }
         
+        /* بطاقات الألعاب */
         .games-container {
             width: 100%;
             margin: 0 auto;
@@ -180,8 +148,8 @@
         
         .games-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 15px;
         }
         
         .game-card {
@@ -196,40 +164,37 @@
         }
         
         .game-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0, 150, 255, 0.4);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 150, 255, 0.5);
         }
         
         .game-image {
             width: 100%;
-            height: 100px;
+            height: 120px;
             background-size: cover;
             background-position: center;
         }
         
         .game-info {
-            padding: 10px;
+            padding: 12px;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
         }
         
         .game-title {
-            font-weight: 600;
-            font-size: 13px;
-            margin-bottom: 5px;
+            font-weight: 700;
+            font-size: 15px;
+            margin-bottom: 8px;
             color: var(--primary-color);
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
             text-shadow: 0 0 10px rgba(0, 198, 255, 0.4);
         }
         
         .game-features {
-            font-size: 11px;
+            font-size: 12px;
             color: var(--text-light);
-            margin-bottom: 8px;
-            min-height: 30px;
+            margin-bottom: 10px;
+            min-height: 40px;
             display: -webkit-box;
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
@@ -240,8 +205,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 8px;
-            font-size: 11px;
+            margin-bottom: 10px;
+            font-size: 12px;
         }
         
         .game-rating {
@@ -249,37 +214,29 @@
             font-weight: 600;
             display: flex;
             align-items: center;
-            gap: 2px;
-            text-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
+            gap: 3px;
         }
         
         .game-downloads {
             color: var(--text-light);
             display: flex;
             align-items: center;
-            gap: 2px;
-        }
-        
-        .download-icon {
-            width: 10px;
-            height: 10px;
-            filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.5));
+            gap: 3px;
         }
         
         .view-button {
             background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
             color: white;
             border: none;
-            padding: 6px;
-            border-radius: 5px;
-            font-size: 11px;
+            padding: 8px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
             cursor: pointer;
             text-decoration: none;
             text-align: center;
             box-shadow: 0 0 10px rgba(0, 150, 255, 0.5);
             transition: all 0.3s ease;
-            display: block;
-            font-weight: 500;
             margin-top: auto;
         }
         
@@ -288,28 +245,11 @@
             box-shadow: 0 0 15px rgba(0, 150, 255, 0.8);
         }
         
-        .loading {
-            display: none;
-            text-align: center;
-            padding: 15px;
-            color: var(--text-light);
-            font-size: 13px;
-        }
-        
-        .no-results {
-            display: none;
-            text-align: center;
-            padding: 15px;
-            color: var(--text-light);
-            font-size: 13px;
-            grid-column: 1 / -1;
-        }
-
-        /* علامة Trending الجديدة */
+        /* علامة Trending */
         .trending-badge {
             position: absolute;
             top: 8px;
-            right: 8px;
+            left: 8px;
             background: linear-gradient(135deg, var(--trending-color) 0%, #ff1a1a 100%);
             color: white;
             font-size: 10px;
@@ -321,92 +261,72 @@
             text-transform: uppercase;
             animation: pulse 2s infinite;
         }
-
+        
         @keyframes pulse {
             0% { box-shadow: 0 0 8px rgba(255, 77, 77, 0.6); }
             50% { box-shadow: 0 0 12px rgba(255, 77, 77, 0.9); }
             100% { box-shadow: 0 0 8px rgba(255, 77, 77, 0.6); }
         }
-
-        /* قسم التعليقات الجديد */
-        .testimonials {
-            margin-top: 30px;
-            grid-column: 1 / -1;
-        }
-
-        .testimonials h3 {
-            text-align: center;
-            margin-bottom: 15px;
-            color: var(--primary-color);
-            font-size: 18px;
-            text-shadow: 0 0 10px rgba(0, 198, 255, 0.4);
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-        }
-
-        .testimonial-card {
-            background: rgba(255, 255, 255, 0.05);
+        
+        /* خطوات التنزيل */
+        .download-steps {
+            background: rgba(0, 0, 0, 0.2);
             border-radius: 10px;
-            padding: 15px;
+            padding: 20px;
+            margin: 25px 0;
             border: 1px solid rgba(0, 198, 255, 0.2);
         }
-
-        .testimonial-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
+        
+        .download-steps h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 18px;
+            text-align: center;
         }
-
-        .testimonial-avatar {
-            width: 30px;
-            height: 30px;
+        
+        .steps-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        .step-number {
+            background: var(--primary-color);
+            color: white;
+            width: 25px;
+            height: 25px;
             border-radius: 50%;
-            background-color: var(--primary-color);
-            margin-right: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
             font-weight: bold;
+            flex-shrink: 0;
+        }
+        
+        .step-content {
+            color: var(--text-light);
             font-size: 14px;
         }
-
-        .testimonial-name {
-            font-weight: 600;
-            font-size: 13px;
+        
+        .step-content strong {
+            color: var(--primary-color);
         }
-
-        .testimonial-date {
-            font-size: 10px;
-            color: rgba(255, 255, 255, 0.6);
-            margin-top: 2px;
-        }
-
-        .testimonial-text {
-            font-size: 12px;
-            line-height: 1.4;
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        .testimonial-rating {
-            color: #FFD700;
-            font-size: 12px;
-            margin-top: 8px;
-        }
-
-        /* الفوتر الجديد */
+        
+        /* الفوتر */
         .footer {
-            margin-top: 30px;
+            margin-top: 40px;
             padding: 20px 15px;
             text-align: center;
-            background: rgba(0, 0, 0, 0.2);
+            background: rgba(0, 0, 0, 0.3);
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
-
+        
         .footer-links {
             display: flex;
             justify-content: center;
@@ -414,65 +334,101 @@
             gap: 15px;
             margin-bottom: 15px;
         }
-
+        
         .footer-links a {
             color: var(--text-light);
             text-decoration: none;
-            font-size: 12px;
+            font-size: 13px;
             transition: all 0.3s ease;
         }
-
+        
         .footer-links a:hover {
             color: var(--primary-color);
             text-shadow: 0 0 8px rgba(0, 198, 255, 0.6);
         }
-
+        
         .copyright {
-            font-size: 11px;
+            font-size: 12px;
             color: rgba(255, 255, 255, 0.6);
             margin-top: 10px;
         }
-
-        @media (min-width: 400px) {
+        
+        /* صفحة التثبيت */
+        .install-page {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .game-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .game-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 15px;
+            background-size: cover;
+        }
+        
+        .game-title-large {
+            font-size: 24px;
+            color: var(--primary-color);
+        }
+        
+        .features-list {
+            margin: 20px 0;
+            padding-right: 15px;
+        }
+        
+        .features-list li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-right: 20px;
+        }
+        
+        .features-list li:before {
+            content: "✓";
+            color: var(--success-color);
+            position: absolute;
+            right: 0;
+        }
+        
+        .fake-download-btn {
+            display: block;
+            background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 30px auto;
+            max-width: 300px;
+            text-decoration: none;
+            box-shadow: 0 0 15px rgba(0, 150, 255, 0.6);
+            transition: all 0.3s ease;
+        }
+        
+        .fake-download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 25px rgba(0, 150, 255, 0.9);
+        }
+        
+        @media (max-width: 600px) {
             .games-grid {
-                gap: 12px;
-            }
-            
-            .game-image {
-                height: 110px;
+                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
             }
             
             .game-title {
                 font-size: 14px;
             }
             
-            .view-button {
-                font-size: 12px;
-                padding: 7px;
-            }
-            
-            .logo {
-                font-size: 20px;
-            }
-            
-            .footer-links a {
-                font-size: 13px;
-            }
-            
-            .copyright {
-                font-size: 12px;
-            }
-
-            .testimonial-card {
-                padding: 20px;
-            }
-            
-            .testimonial-name {
-                font-size: 14px;
-            }
-            
-            .testimonial-text {
-                font-size: 13px;
+            .game-features {
+                font-size: 11px;
             }
         }
     </style>
@@ -480,56 +436,42 @@
 <body>
     <!-- زر القائمة -->
     <button class="menu-btn">☰</button>
-    
+
     <!-- القائمة الجانبية -->
     <div class="sidebar">
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Popular Games</a></li>
-            <li><a href="#">Categories</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Contact Us</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">الرئيسية</a></li>
+            <li><a href="#">الألعاب الشائعة</a></li>
+            <li><a href="#">التصنيفات</a></li>
+            <li><a href="#">حولنا</a></li>
+            <li><a href="#">اتصل بنا</a></li>
+            <li><a href="#">سياسة الخصوصية</a></li>
+            <li><a href="#">شروط الخدمة</a></li>
         </ul>
     </div>
-    
-    <!-- أيقونة الإنستجرام -->
-    <a href="https://www.instagram.com/alverichamza?igsh=cnkxbTY3ZGY5MHlk" class="instagram-icon" target="_blank">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-        </svg>
-    </a>
 
     <div class="header">
-        <div class="logo">Premium Game Mods - Unlock Exclusive Features!</div>
+        <div class="logo">بريميوم جيم مودز - ميزات حصرية مجانية!</div>
+        <div class="subtitle">تنزيل تعديلات الألعاب مع موارد غير محدودة وميزات VIP بدون إعلانات!</div>
     </div>
 
     <div class="search-container">
-        <input type="text" class="search-box" placeholder="Search games..." id="searchInput">
-    </div>
-
-    <div class="loading" id="loadingIndicator">
-        Loading games...
-    </div>
-
-    <div class="no-results" id="noResults">
-        No games found
+        <input type="text" class="search-box" placeholder="ابحث عن الألعاب..." id="searchInput">
     </div>
 
     <div class="games-container">
         <div class="games-grid" id="gamesGrid">
-            <!-- Wuthering Waves - الصف الأول اليسار -->
+            <!-- Wuthering Waves -->
             <div class="game-card" data-game-name="wuthering waves">
-                <div class="trending-badge">Trending</div>
-                <div class="game-image" style="background-image: url('https://imgur.com/iqbe5Fl.jpg');"></div>
+                <div class="trending-badge">شائع</div>
+                <div class="game-image" style="background-image: url('https://imgur.com/AOIOaEb.jpg');"></div>
                 <div class="game-info">
                     <div class="game-title">Wuthering Waves</div>
-                    <div class="game-features">Unlock all characters + unlimited resources</div>
+                    <div class="game-features">فتح جميع الشخصيات + موارد غير محدودة</div>
                     <div class="game-stats">
-                        <div class="game-rating">4.9 ★★★★&#9734</div>
+                        <div class="game-rating">4.9 ★★★★☆</div>
                         <div class="game-downloads">
-                            <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                                 <polyline points="7 10 12 15 17 10"></polyline>
                                 <line x1="12" y1="15" x2="12" y2="3"></line>
@@ -537,21 +479,21 @@
                             <span>96.4K</span>
                         </div>
                     </div>
-                   <a href="https://installchecker.com/cl/i/37xx77" class="view-button" target="_blank">Get Mod Now</a>
+                    <a href="install-guide/wuthering-waves" class="view-button">الحصول على المود</a>
                 </div>
             </div>
 
-            <!-- Tower of Fantasy - الصف الأول اليمين -->
+            <!-- Tower of Fantasy -->
             <div class="game-card" data-game-name="tower of fantasy">
-                <div class="trending-badge">Trending</div>
+                <div class="trending-badge">شائع</div>
                 <div class="game-image" style="background-image: url('https://imgur.com/Dv9YGEc.jpg');"></div>
                 <div class="game-info">
                     <div class="game-title">Tower of Fantasy</div>
-                    <div class="game-features">Free legendary skins + unlimited crystals</div>
+                    <div class="game-features">أساطير مجانية + كريستالات غير محدودة</div>
                     <div class="game-stats">
                         <div class="game-rating">4.1 ★★★★</div>
                         <div class="game-downloads">
-                            <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                                 <polyline points="7 10 12 15 17 10"></polyline>
                                 <line x1="12" y1="15" x2="12" y2="3"></line>
@@ -559,21 +501,21 @@
                             <span>43.5K</span>
                         </div>
                     </div>
-                    <a href="game/tower-of-fantasy" class="view-button">Get Mod Now</a>
+                    <a href="install-guide/tower-of-fantasy" class="view-button">الحصول على المود</a>
                 </div>
             </div>
 
-            <!-- Genshin Impact - الصف الثاني اليسار -->
+            <!-- Genshin Impact -->
             <div class="game-card" data-game-name="genshin impact">
-                <div class="trending-badge">Trending</div>
+                <div class="trending-badge">شائع</div>
                 <div class="game-image" style="background-image: url('https://imgur.com/iKcIVfW.jpg');"></div>
                 <div class="game-info">
                     <div class="game-title">Genshin Impact</div>
-                    <div class="game-features">10,000 Primogems daily + all characters unlocked</div>
+                    <div class="game-features">10,000 بريموجيم يوميًا + جميع الشخصيات</div>
                     <div class="game-stats">
                         <div class="game-rating">4.4 ★★★★</div>
                         <div class="game-downloads">
-                            <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                                 <polyline points="7 10 12 15 17 10"></polyline>
                                 <line x1="12" y1="15" x2="12" y2="3"></line>
@@ -581,20 +523,20 @@
                             <span>95.9K</span>
                         </div>
                     </div>
-                    <a href="game/genshin-impact" class="view-button">Get Mod Now</a>
+                    <a href="install-guide/genshin-impact" class="view-button">الحصول على المود</a>
                 </div>
             </div>
 
-            <!-- Roblox - الصف الثاني اليمين -->
+            <!-- Roblox -->
             <div class="game-card" data-game-name="roblox">
                 <div class="game-image" style="background-image: url('https://imgur.com/HKdYVrU.jpg');"></div>
                 <div class="game-info">
                     <div class="game-title">Roblox</div>
-                    <div class="game-features">Free Robux generator + exclusive items</div>
+                    <div class="game-features">مولد روبوكس مجاني + عناصر حصرية</div>
                     <div class="game-stats">
-                        <div class="game-rating">4.5 ★★★★&#9734</div>
+                        <div class="game-rating">4.5 ★★★★☆</div>
                         <div class="game-downloads">
-                            <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                                 <polyline points="7 10 12 15 17 10"></polyline>
                                 <line x1="12" y1="15" x2="12" y2="3"></line>
@@ -602,20 +544,20 @@
                             <span>131.2K</span>
                         </div>
                     </div>
-                    <a href="game/roblox" class="view-button">Get Mod Now</a>
+                    <a href="install-guide/roblox" class="view-button">الحصول على المود</a>
                 </div>
             </div>
 
-            <!-- FIFA 25 - الصف الثالث اليسار -->
+            <!-- FIFA 25 -->
             <div class="game-card" data-game-name="fifa 25">
                 <div class="game-image" style="background-image: url('https://imgur.com/NvjMQB0.jpg');"></div>
                 <div class="game-info">
                     <div class="game-title">FIFA 25</div>
-                    <div class="game-features">Unlimited coins + all players unlocked</div>
+                    <div class="game-features">عملات غير محدودة + جميع اللاعبين</div>
                     <div class="game-stats">
-                        <div class="game-rating">4.9 ★★★★&#9734</div>
+                        <div class="game-rating">4.9 ★★★★☆</div>
                         <div class="game-downloads">
-                            <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                                 <polyline points="7 10 12 15 17 10"></polyline>
                                 <line x1="12" y1="15" x2="12" y2="3"></line>
@@ -623,169 +565,170 @@
                             <span>186.8K</span>
                         </div>
                     </div>
-                    <a href="game/fifa-25" class="view-button">Get Mod Now</a>
+                    <a href="install-guide/fifa-25" class="view-button">الحصول على المود</a>
                 </div>
             </div>
 
-            <!-- Stumble Guys - الصف الثالث اليمين -->
+            <!-- Stumble Guys -->
             <div class="game-card" data-game-name="stumble guys">
                 <div class="game-image" style="background-image: url('https://imgur.com/3YBJ8Kp.jpg');"></div>
                 <div class="game-info">
                     <div class="game-title">Stumble Guys</div>
-                    <div class="game-features">All skins unlocked + no ads</div>
+                    <div class="game-features">جميع الأساطيل مفتوحة + بدون إعلانات</div>
                     <div class="game-stats">
-                        <div class="game-rating">4.7 ★★★★&#9734</div>
+                        <div class="game-rating">4.7 ★★★★☆</div>
                         <div class="game-downloads">
-                            <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                                 <polyline points="7 10 12 15 17 10"></polyline>
                                 <line x1="12" y1="15" x2="12" y2="3"></line>
                             </svg>
-                            <span>75.4K</span>
+                            <span>78.3K</span>
                         </div>
                     </div>
-                    <a href="game/stumble-guys" class="view-button">Get Mod Now</a>
+                    <a href="install-guide/stumble-guys" class="view-button">الحصول على المود</a>
                 </div>
             </div>
         </div>
 
-        <!-- قسم التعليقات الجديد -->
-        <div class="testimonials">
-            <h3>What Our Gamers Say</h3>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-avatar">J</div>
-                        <div>
-                            <div class="testimonial-name">Jason R.</div>
-                            <div class="testimonial-date">3 days ago</div>
-                        </div>
-                    </div>
-                    <div class="testimonial-text">
-                        The Wuthering Waves mod works perfectly! Got all characters unlocked without any ban. Highly recommend!
-                    </div>
-                    <div class="testimonial-rating">★★★★★</div>
+        <!-- قسم خطوات التنزيل -->
+        <div class="download-steps">
+            <h3>كيفية تنزيل وتثبيت المودات</h3>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">اضغط على زر <strong>"الحصول على المود"</strong> للعبة المطلوبة</div>
                 </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-avatar">S</div>
-                        <div>
-                            <div class="testimonial-name">Sarah K.</div>
-                            <div class="testimonial-date">1 week ago</div>
-                        </div>
-                    </div>
-                    <div class="testimonial-text">
-                        Finally found a safe mod for Genshin. The unlimited primogems feature is a game changer!
-                    </div>
-                    <div class="testimonial-rating">★★★★☆</div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">اتبع التعليمات في صفحة التثبيت</div>
                 </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-avatar">M</div>
-                        <div>
-                            <div class="testimonial-name">Mike T.</div>
-                            <div class="testimonial-date">2 days ago</div>
-                        </div>
-                    </div>
-                    <div class="testimonial-text">
-                        Downloaded Tower of Fantasy mod and it's working great. The free skins are amazing!
-                    </div>
-                    <div class="testimonial-rating">★★★★★</div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">قم بتنزيل ملف APK واضغط عليه للتثبيت</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">استمتع باللعبة مع جميع الميزات المميزة!</div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- الفوتر الجديد -->
+    <!-- الفوتر -->
     <div class="footer">
         <div class="footer-links">
-            <a href="#">Home</a>
-            <a href="#">About Us</a>
-            <a href="#">Contact</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
+            <a href="#">سياسة الخصوصية</a>
+            <a href="#">شروط الاستخدام</a>
+            <a href="#">اتصل بنا</a>
+            <a href="#">حول الموقع</a>
         </div>
-        <div class="copyright">
-            © 2023 Game Mods Hub. All Rights Reserved.
+        <div class="copyright">© 2023 بريميوم جيم مودز. جميع الحقوق محفوظة.</div>
+    </div>
+
+    <!-- صفحة تثبيت وهمية (ستظهر عند النقر على أي لعبة) -->
+    <div id="installGuideModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 10000; overflow-y: auto; padding: 20px;">
+        <div class="install-page">
+            <div class="game-header">
+                <div class="game-icon" id="guideGameIcon" style="background-image: url('https://imgur.com/AOIOaEb.jpg');"></div>
+                <h1 class="game-title-large" id="guideGameTitle">Wuthering Waves</h1>
+            </div>
+            
+            <h3>الميزات المتاحة في هذا المود:</h3>
+            <ul class="features-list" id="guideGameFeatures">
+                <li>جميع الشخصيات مفتوحة</li>
+                <li>موارد غير محدودة (ذهب، أحجار، إلخ)</li>
+                <li>إزالة جميع الإعلانات</li>
+                <li>ميزات VIP مميزة</li>
+            </ul>
+            
+            <div class="download-steps">
+                <h3>خطوات التثبيت</h3>
+                <div class="steps-container">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">اضغط على زر التنزيل بالأسفل</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">افتح ملف APK بعد التنزيل</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">اتبع التعليمات الظاهرة للتثبيت</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">استمتع باللعبة مع جميع الميزات!</div>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="#" class="fake-download-btn" id="fakeDownloadBtn">تنزيل المود الآن (APK)</a>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <button onclick="document.getElementById('installGuideModal').style.display='none'" style="background: #ff4757; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">إغلاق</button>
+            </div>
         </div>
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const searchInput = document.getElementById('searchInput');
-            const gamesGrid = document.getElementById('gamesGrid');
-            const gameCards = Array.from(document.querySelectorAll('.game-card'));
-            const loadingIndicator = document.getElementById('loadingIndicator');
-            const noResults = document.getElementById('noResults');
-            const menuBtn = document.querySelector('.menu-btn');
-            const sidebar = document.querySelector('.sidebar');
-            
-            // فتح/إغلاق القائمة
-            menuBtn.addEventListener('click', function() {
-                sidebar.classList.toggle('active');
-            });
-            
-            // إغلاق القائمة عند النقر خارجها
-            document.addEventListener('click', function(event) {
-                if (!sidebar.contains(event.target) && event.target !== menuBtn) {
-                    sidebar.classList.remove('active');
-                }
-            });
-            
-            // تحسين تجربة البحث
-            function performSearch() {
-                const searchTerm = searchInput.value.toLowerCase().trim();
-                
-                if (searchTerm.length > 0) {
-                    loadingIndicator.style.display = 'block';
-                    gamesGrid.style.opacity = '0.5';
-                    noResults.style.display = 'none';
-                    
-                    setTimeout(() => {
-                        let hasResults = false;
-                        
-                        gameCards.forEach(card => {
-                            const gameName = card.getAttribute('data-game-name').toLowerCase();
-                            const gameTitle = card.querySelector('.game-title').textContent.toLowerCase();
-                            
-                            if (gameName.includes(searchTerm) || gameTitle.includes(searchTerm)) {
-                                card.style.display = 'flex';
-                                hasResults = true;
-                            } else {
-                                card.style.display = 'none';
-                            }
-                        });
-                        
-                        loadingIndicator.style.display = 'none';
-                        gamesGrid.style.opacity = '1';
-                        
-                        if (!hasResults) {
-                            noResults.style.display = 'block';
-                        }
-                    }, 200);
+        // القائمة الجانبية
+        document.querySelector('.menu-btn').addEventListener('click', function() {
+            document.querySelector('.sidebar').classList.toggle('active');
+        });
+
+        // البحث عن الألعاب
+        document.getElementById('searchInput').addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            const gameCards = document.querySelectorAll('.game-card');
+            let visibleCount = 0;
+
+            gameCards.forEach(card => {
+                const gameName = card.getAttribute('data-game-name');
+                if (gameName.includes(searchTerm)) {
+                    card.style.display = 'flex';
+                    visibleCount++;
                 } else {
-                    gameCards.forEach(card => {
-                        card.style.display = 'flex';
-                    });
-                    noResults.style.display = 'none';
-                    loadingIndicator.style.display = 'none';
-                    gamesGrid.style.opacity = '1';
-                }
-            }
-            
-            // أحداث البحث
-            searchInput.addEventListener('input', performSearch);
-            searchInput.addEventListener('search', performSearch);
-            
-            // تحسين إمكانية الوصول
-            searchInput.addEventListener('keydown', function(e) {
-                if (e.key === 'Enter') {
-                    this.blur();
-                    performSearch();
+                    card.style.display = 'none';
                 }
             });
+        });
+
+        // محاكاة صفحة التثبيت عند النقر على أي لعبة
+        document.querySelectorAll('.view-button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const gameCard = this.closest('.game-card');
+                const gameTitle = gameCard.querySelector('.game-title').textContent;
+                const gameImage = gameCard.querySelector('.game-image').style.backgroundImage;
+                const gameFeatures = gameCard.querySelector('.game-features').textContent;
+                
+                document.getElementById('guideGameTitle').textContent = gameTitle;
+                document.getElementById('guideGameIcon').style.backgroundImage = gameImage;
+                
+                const featuresList = document.getElementById('guideGameFeatures');
+                featuresList.innerHTML = '';
+                gameFeatures.split('+').forEach(feature => {
+                    if (feature.trim()) {
+                        const li = document.createElement('li');
+                        li.textContent = feature.trim();
+                        featuresList.appendChild(li);
+                    }
+                });
+                
+                document.getElementById('installGuideModal').style.display = 'block';
+            });
+        });
+
+        // محاكاة التنزيل مع إظهار الـ Content Locker
+        document.getElementById('fakeDownloadBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            if (confirm('لتنزيل الملف، يرجى إكمال تحقيق سريع. هل تريد المتابعة؟')) {
+                // هنا يمكنك توجيه المستخدم إلى صفحة OGAds أو CPA الخاصة بك
+                window.location.href = 'https://installchecker.com/cl/i/37xx77';
+            }
         });
     </script>
 </body>
