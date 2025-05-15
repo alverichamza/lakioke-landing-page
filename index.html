@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enhance Your Gaming 
-      Experience with us !- Game Mods Hub</title>
+    <title>Premium Game Mods Hub - Unlock Exclusive Features!</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
         
@@ -16,6 +15,7 @@
             --card-bg: #2a2a3a;
             --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
             --text-light: rgba(255, 255, 255, 0.9);
+            --trending-color: #ff4d4d;
         }
         
         * {
@@ -192,6 +192,7 @@
             transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
+            position: relative;
         }
         
         .game-card:hover {
@@ -282,6 +283,11 @@
             margin-top: auto;
         }
         
+        .view-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 15px rgba(0, 150, 255, 0.8);
+        }
+        
         .loading {
             display: none;
             text-align: center;
@@ -297,6 +303,99 @@
             color: var(--text-light);
             font-size: 13px;
             grid-column: 1 / -1;
+        }
+
+        /* علامة Trending الجديدة */
+        .trending-badge {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: linear-gradient(135deg, var(--trending-color) 0%, #ff1a1a 100%);
+            color: white;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 10px;
+            box-shadow: 0 0 8px rgba(255, 77, 77, 0.6);
+            z-index: 2;
+            text-transform: uppercase;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 8px rgba(255, 77, 77, 0.6); }
+            50% { box-shadow: 0 0 12px rgba(255, 77, 77, 0.9); }
+            100% { box-shadow: 0 0 8px rgba(255, 77, 77, 0.6); }
+        }
+
+        /* قسم التعليقات الجديد */
+        .testimonials {
+            margin-top: 30px;
+            grid-column: 1 / -1;
+        }
+
+        .testimonials h3 {
+            text-align: center;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            font-size: 18px;
+            text-shadow: 0 0 10px rgba(0, 198, 255, 0.4);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 15px;
+            border: 1px solid rgba(0, 198, 255, 0.2);
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .testimonial-avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .testimonial-name {
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+        .testimonial-date {
+            font-size: 10px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 2px;
+        }
+
+        .testimonial-text {
+            font-size: 12px;
+            line-height: 1.4;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .testimonial-rating {
+            color: #FFD700;
+            font-size: 12px;
+            margin-top: 8px;
         }
 
         /* الفوتر الجديد */
@@ -363,6 +462,18 @@
             .copyright {
                 font-size: 12px;
             }
+
+            .testimonial-card {
+                padding: 20px;
+            }
+            
+            .testimonial-name {
+                font-size: 14px;
+            }
+            
+            .testimonial-text {
+                font-size: 13px;
+            }
         }
     </style>
 </head>
@@ -391,7 +502,7 @@
     </a>
 
     <div class="header">
-        <div class="logo">Enhance Your Gaming Experience with us!</div>
+        <div class="logo">Premium Game Mods - Unlock Exclusive Features!</div>
     </div>
 
     <div class="search-container">
@@ -410,10 +521,11 @@
         <div class="games-grid" id="gamesGrid">
             <!-- Wuthering Waves - الصف الأول اليسار -->
             <div class="game-card" data-game-name="wuthering waves">
+                <div class="trending-badge">Trending</div>
                 <div class="game-image" style="background-image: url('https://imgur.com/AOIOaEb.jpg');"></div>
                 <div class="game-info">
                     <div class="game-title">Wuthering Waves</div>
-                    <div class="game-features">[ Download before it's gone ! ]</div>
+                    <div class="game-features">Unlock all characters + unlimited resources</div>
                     <div class="game-stats">
                         <div class="game-rating">4.9 ★★★★&#9734</div>
                         <div class="game-downloads">
@@ -425,16 +537,17 @@
                             <span>96.4K</span>
                         </div>
                     </div>
-                    <a href="game/wuthering-waves" class="view-button">View Game</a>
+                    <a href="game/wuthering-waves" class="view-button">Get Mod Now</a>
                 </div>
             </div>
 
             <!-- Tower of Fantasy - الصف الأول اليمين -->
             <div class="game-card" data-game-name="tower of fantasy">
+                <div class="trending-badge">Trending</div>
                 <div class="game-image" style="background-image: url('https://imgur.com/Dv9YGEc.jpg');"></div>
                 <div class="game-info">
                     <div class="game-title">Tower of Fantasy</div>
-                    <div class="game-features">[ Grab free skins now ! ]</div>
+                    <div class="game-features">Free legendary skins + unlimited crystals</div>
                     <div class="game-stats">
                         <div class="game-rating">4.1 ★★★★</div>
                         <div class="game-downloads">
@@ -446,16 +559,17 @@
                             <span>43.5K</span>
                         </div>
                     </div>
-                    <a href="game/tower-of-fantasy" class="view-button">View Game</a>
+                    <a href="game/tower-of-fantasy" class="view-button">Get Mod Now</a>
                 </div>
             </div>
 
             <!-- Genshin Impact - الصف الثاني اليسار -->
             <div class="game-card" data-game-name="genshin impact">
+                <div class="trending-badge">Trending</div>
                 <div class="game-image" style="background-image: url('https://imgur.com/iKcIVfW.jpg');"></div>
                 <div class="game-info">
                     <div class="game-title">Genshin Impact</div>
-                    <div class="game-features">[ Daily rewards + rare gifts ]</div>
+                    <div class="game-features">10,000 Primogems daily + all characters unlocked</div>
                     <div class="game-stats">
                         <div class="game-rating">4.4 ★★★★</div>
                         <div class="game-downloads">
@@ -467,7 +581,7 @@
                             <span>95.9K</span>
                         </div>
                     </div>
-                    <a href="game/genshin-impact" class="view-button">View Game</a>
+                    <a href="game/genshin-impact" class="view-button">Get Mod Now</a>
                 </div>
             </div>
 
@@ -476,7 +590,7 @@
                 <div class="game-image" style="background-image: url('https://imgur.com/HKdYVrU.jpg');"></div>
                 <div class="game-info">
                     <div class="game-title">Roblox</div>
-                    <div class="game-features">[ Limited skins + fun event ]</div>
+                    <div class="game-features">Free Robux generator + exclusive items</div>
                     <div class="game-stats">
                         <div class="game-rating">4.5 ★★★★&#9734</div>
                         <div class="game-downloads">
@@ -488,7 +602,7 @@
                             <span>131.2K</span>
                         </div>
                     </div>
-                    <a href="game/roblox" class="view-button">View Game</a>
+                    <a href="game/roblox" class="view-button">Get Mod Now</a>
                 </div>
             </div>
 
@@ -497,7 +611,7 @@
                 <div class="game-image" style="background-image: url('https://imgur.com/NvjMQB0.jpg');"></div>
                 <div class="game-info">
                     <div class="game-title">FIFA 25</div>
-                    <div class="game-features">[ Daily rewards + exclusive items ]</div>
+                    <div class="game-features">Unlimited coins + all players unlocked</div>
                     <div class="game-stats">
                         <div class="game-rating">4.9 ★★★★&#9734</div>
                         <div class="game-downloads">
@@ -509,7 +623,7 @@
                             <span>186.8K</span>
                         </div>
                     </div>
-                    <a href="game/fifa-25" class="view-button">View Game</a>
+                    <a href="game/fifa-25" class="view-button">Get Mod Now</a>
                 </div>
             </div>
 
@@ -518,7 +632,7 @@
                 <div class="game-image" style="background-image: url('https://imgur.com/3YBJ8Kp.jpg');"></div>
                 <div class="game-info">
                     <div class="game-title">Stumble Guys</div>
-                    <div class="game-features">[ Play with friends + get rewards ]</div>
+                    <div class="game-features">All skins unlocked + no ads</div>
                     <div class="game-stats">
                         <div class="game-rating">4.7 ★★★★&#9734</div>
                         <div class="game-downloads">
@@ -530,7 +644,55 @@
                             <span>75.4K</span>
                         </div>
                     </div>
-                    <a href="game/stumble-guys" class="view-button">View Game</a>
+                    <a href="game/stumble-guys" class="view-button">Get Mod Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- قسم التعليقات الجديد -->
+        <div class="testimonials">
+            <h3>What Our Gamers Say</h3>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">J</div>
+                        <div>
+                            <div class="testimonial-name">Jason R.</div>
+                            <div class="testimonial-date">3 days ago</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-text">
+                        The Wuthering Waves mod works perfectly! Got all characters unlocked without any ban. Highly recommend!
+                    </div>
+                    <div class="testimonial-rating">★★★★★</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">S</div>
+                        <div>
+                            <div class="testimonial-name">Sarah K.</div>
+                            <div class="testimonial-date">1 week ago</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-text">
+                        Finally found a safe mod for Genshin. The unlimited primogems feature is a game changer!
+                    </div>
+                    <div class="testimonial-rating">★★★★☆</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">M</div>
+                        <div>
+                            <div class="testimonial-name">Mike T.</div>
+                            <div class="testimonial-date">2 days ago</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-text">
+                        Downloaded Tower of Fantasy mod and it's working great. The free skins are amazing!
+                    </div>
+                    <div class="testimonial-rating">★★★★★</div>
                 </div>
             </div>
         </div>
