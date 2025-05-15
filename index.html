@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>بريميوم جيم مودز - ميزات حصرية مجانية!</title>
+    <title>Premium Game Mods Hub - Unlock Exclusive Features!</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
         :root {
             --primary-color: #00c6ff;
             --secondary-color: #0072ff;
@@ -22,7 +22,7 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Tajawal', sans-serif;
+            font-family: 'Roboto', sans-serif;
         }
         
         body {
@@ -34,11 +34,11 @@
             flex-direction: column;
         }
         
-        /* القائمة */
+        /* Menu */
         .menu-btn {
             position: fixed;
             top: 20px;
-            right: 20px;
+            left: 20px;
             cursor: pointer;
             z-index: 1000;
             background: transparent;
@@ -52,19 +52,19 @@
         .sidebar {
             position: fixed;
             top: 0;
-            right: -300px;
+            left: -300px;
             width: 250px;
             height: 100%;
             background: linear-gradient(145deg, #1a1a2e 0%, #0f3460 100%);
             transition: all 0.3s ease;
             z-index: 999;
             padding: 60px 20px 20px;
-            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
             overflow-y: auto;
         }
         
         .sidebar.active {
-            right: 0;
+            left: 0;
         }
         
         .sidebar ul {
@@ -88,10 +88,10 @@
         
         .sidebar ul li a:hover {
             background: rgba(0, 198, 255, 0.3);
-            transform: translateX(-5px);
+            transform: translateX(5px);
         }
         
-        /* الهيدر */
+        /* Header */
         .header {
             text-align: center;
             margin-bottom: 25px;
@@ -105,7 +105,6 @@
             margin-bottom: 10px;
             text-shadow: 0 0 15px rgba(0, 198, 255, 0.7);
             letter-spacing: 0.5px;
-            line-height: 1.4;
         }
         
         .subtitle {
@@ -114,7 +113,7 @@
             margin-bottom: 20px;
         }
         
-        /* البحث */
+        /* Search */
         .search-container {
             text-align: center;
             margin-bottom: 20px;
@@ -139,7 +138,7 @@
             border-color: var(--primary-color);
         }
         
-        /* بطاقات الألعاب */
+        /* Game Cards */
         .games-container {
             width: 100%;
             margin: 0 auto;
@@ -245,11 +244,11 @@
             box-shadow: 0 0 15px rgba(0, 150, 255, 0.8);
         }
         
-        /* علامة Trending */
+        /* Trending Badge */
         .trending-badge {
             position: absolute;
             top: 8px;
-            left: 8px;
+            right: 8px;
             background: linear-gradient(135deg, var(--trending-color) 0%, #ff1a1a 100%);
             color: white;
             font-size: 10px;
@@ -268,7 +267,7 @@
             100% { box-shadow: 0 0 8px rgba(255, 77, 77, 0.6); }
         }
         
-        /* خطوات التنزيل */
+        /* Download Steps */
         .download-steps {
             background: rgba(0, 0, 0, 0.2);
             border-radius: 10px;
@@ -314,11 +313,78 @@
             font-size: 14px;
         }
         
-        .step-content strong {
-            color: var(--primary-color);
+        /* Testimonials */
+        .testimonials {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 25px 0;
+            border: 1px solid rgba(0, 198, 255, 0.2);
         }
         
-        /* الفوتر */
+        .testimonials h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 18px;
+            text-align: center;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 15px;
+        }
+        
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .testimonial-avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        .testimonial-name {
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        .testimonial-date {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 2px;
+        }
+        
+        .testimonial-text {
+            font-size: 13px;
+            line-height: 1.4;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .testimonial-rating {
+            color: #FFD700;
+            font-size: 13px;
+            margin-top: 8px;
+        }
+        
+        /* Footer */
         .footer {
             margin-top: 40px;
             padding: 20px 15px;
@@ -353,7 +419,7 @@
             margin-top: 10px;
         }
         
-        /* صفحة التثبيت */
+        /* Install Guide Modal */
         .install-page {
             max-width: 800px;
             margin: 0 auto;
@@ -381,20 +447,20 @@
         
         .features-list {
             margin: 20px 0;
-            padding-right: 15px;
+            padding-left: 15px;
         }
         
         .features-list li {
             margin-bottom: 10px;
             position: relative;
-            padding-right: 20px;
+            padding-left: 20px;
         }
         
         .features-list li:before {
             content: "✓";
             color: var(--success-color);
             position: absolute;
-            right: 0;
+            left: 0;
         }
         
         .fake-download-btn {
@@ -434,40 +500,40 @@
     </style>
 </head>
 <body>
-    <!-- زر القائمة -->
+    <!-- Menu Button -->
     <button class="menu-btn">☰</button>
 
-    <!-- القائمة الجانبية -->
+    <!-- Sidebar -->
     <div class="sidebar">
         <ul>
-            <li><a href="#">الرئيسية</a></li>
-            <li><a href="#">الألعاب الشائعة</a></li>
-            <li><a href="#">التصنيفات</a></li>
-            <li><a href="#">حولنا</a></li>
-            <li><a href="#">اتصل بنا</a></li>
-            <li><a href="#">سياسة الخصوصية</a></li>
-            <li><a href="#">شروط الخدمة</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Popular Games</a></li>
+            <li><a href="#">Categories</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
         </ul>
     </div>
 
     <div class="header">
-        <div class="logo">بريميوم جيم مودز - ميزات حصرية مجانية!</div>
-        <div class="subtitle">تنزيل تعديلات الألعاب مع موارد غير محدودة وميزات VIP بدون إعلانات!</div>
+        <div class="logo">Premium Game Mods Hub</div>
+        <div class="subtitle">Download mods with unlimited resources, VIP features, and no ads!</div>
     </div>
 
     <div class="search-container">
-        <input type="text" class="search-box" placeholder="ابحث عن الألعاب..." id="searchInput">
+        <input type="text" class="search-box" placeholder="Search games..." id="searchInput">
     </div>
 
     <div class="games-container">
         <div class="games-grid" id="gamesGrid">
             <!-- Wuthering Waves -->
             <div class="game-card" data-game-name="wuthering waves">
-                <div class="trending-badge">شائع</div>
+                <div class="trending-badge">Trending</div>
                 <div class="game-image" style="background-image: url('https://imgur.com/AOIOaEb.jpg');"></div>
                 <div class="game-info">
                     <div class="game-title">Wuthering Waves</div>
-                    <div class="game-features">فتح جميع الشخصيات + موارد غير محدودة</div>
+                    <div class="game-features">Unlock all characters + unlimited resources</div>
                     <div class="game-stats">
                         <div class="game-rating">4.9 ★★★★☆</div>
                         <div class="game-downloads">
@@ -479,17 +545,17 @@
                             <span>96.4K</span>
                         </div>
                     </div>
-                    <a href="install-guide/wuthering-waves" class="view-button">الحصول على المود</a>
+                    <a href="install-guide/wuthering-waves" class="view-button">Get Mod</a>
                 </div>
             </div>
 
             <!-- Tower of Fantasy -->
             <div class="game-card" data-game-name="tower of fantasy">
-                <div class="trending-badge">شائع</div>
+                <div class="trending-badge">Trending</div>
                 <div class="game-image" style="background-image: url('https://imgur.com/Dv9YGEc.jpg');"></div>
                 <div class="game-info">
                     <div class="game-title">Tower of Fantasy</div>
-                    <div class="game-features">أساطير مجانية + كريستالات غير محدودة</div>
+                    <div class="game-features">Free legendary skins + unlimited crystals</div>
                     <div class="game-stats">
                         <div class="game-rating">4.1 ★★★★</div>
                         <div class="game-downloads">
@@ -501,17 +567,17 @@
                             <span>43.5K</span>
                         </div>
                     </div>
-                    <a href="install-guide/tower-of-fantasy" class="view-button">الحصول على المود</a>
+                    <a href="install-guide/tower-of-fantasy" class="view-button">Get Mod</a>
                 </div>
             </div>
 
             <!-- Genshin Impact -->
             <div class="game-card" data-game-name="genshin impact">
-                <div class="trending-badge">شائع</div>
+                <div class="trending-badge">Trending</div>
                 <div class="game-image" style="background-image: url('https://imgur.com/iKcIVfW.jpg');"></div>
                 <div class="game-info">
                     <div class="game-title">Genshin Impact</div>
-                    <div class="game-features">10,000 بريموجيم يوميًا + جميع الشخصيات</div>
+                    <div class="game-features">10,000 Primogems daily + all characters unlocked</div>
                     <div class="game-stats">
                         <div class="game-rating">4.4 ★★★★</div>
                         <div class="game-downloads">
@@ -523,7 +589,7 @@
                             <span>95.9K</span>
                         </div>
                     </div>
-                    <a href="install-guide/genshin-impact" class="view-button">الحصول على المود</a>
+                    <a href="install-guide/genshin-impact" class="view-button">Get Mod</a>
                 </div>
             </div>
 
@@ -532,7 +598,7 @@
                 <div class="game-image" style="background-image: url('https://imgur.com/HKdYVrU.jpg');"></div>
                 <div class="game-info">
                     <div class="game-title">Roblox</div>
-                    <div class="game-features">مولد روبوكس مجاني + عناصر حصرية</div>
+                    <div class="game-features">Free Robux generator + exclusive items</div>
                     <div class="game-stats">
                         <div class="game-rating">4.5 ★★★★☆</div>
                         <div class="game-downloads">
@@ -544,7 +610,7 @@
                             <span>131.2K</span>
                         </div>
                     </div>
-                    <a href="install-guide/roblox" class="view-button">الحصول على المود</a>
+                    <a href="install-guide/roblox" class="view-button">Get Mod</a>
                 </div>
             </div>
 
@@ -553,7 +619,7 @@
                 <div class="game-image" style="background-image: url('https://imgur.com/NvjMQB0.jpg');"></div>
                 <div class="game-info">
                     <div class="game-title">FIFA 25</div>
-                    <div class="game-features">عملات غير محدودة + جميع اللاعبين</div>
+                    <div class="game-features">Unlimited coins + all players unlocked</div>
                     <div class="game-stats">
                         <div class="game-rating">4.9 ★★★★☆</div>
                         <div class="game-downloads">
@@ -565,7 +631,7 @@
                             <span>186.8K</span>
                         </div>
                     </div>
-                    <a href="install-guide/fifa-25" class="view-button">الحصول على المود</a>
+                    <a href="install-guide/fifa-25" class="view-button">Get Mod</a>
                 </div>
             </div>
 
@@ -574,7 +640,7 @@
                 <div class="game-image" style="background-image: url('https://imgur.com/3YBJ8Kp.jpg');"></div>
                 <div class="game-info">
                     <div class="game-title">Stumble Guys</div>
-                    <div class="game-features">جميع الأساطيل مفتوحة + بدون إعلانات</div>
+                    <div class="game-features">All skins unlocked + no ads</div>
                     <div class="game-stats">
                         <div class="game-rating">4.7 ★★★★☆</div>
                         <div class="game-downloads">
@@ -586,47 +652,95 @@
                             <span>78.3K</span>
                         </div>
                     </div>
-                    <a href="install-guide/stumble-guys" class="view-button">الحصول على المود</a>
+                    <a href="install-guide/stumble-guys" class="view-button">Get Mod</a>
                 </div>
             </div>
         </div>
 
-        <!-- قسم خطوات التنزيل -->
+        <!-- Download Steps Section -->
         <div class="download-steps">
-            <h3>كيفية تنزيل وتثبيت المودات</h3>
+            <h3>How to Download & Install Mods</h3>
             <div class="steps-container">
                 <div class="step">
                     <div class="step-number">1</div>
-                    <div class="step-content">اضغط على زر <strong>"الحصول على المود"</strong> للعبة المطلوبة</div>
+                    <div class="step-content">Click <strong>"Get Mod"</strong> on your desired game</div>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
-                    <div class="step-content">اتبع التعليمات في صفحة التثبيت</div>
+                    <div class="step-content">Follow the installation guide</div>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
-                    <div class="step-content">قم بتنزيل ملف APK واضغط عليه للتثبيت</div>
+                    <div class="step-content">Download the APK file and install it</div>
                 </div>
                 <div class="step">
                     <div class="step-number">4</div>
-                    <div class="step-content">استمتع باللعبة مع جميع الميزات المميزة!</div>
+                    <div class="step-content">Enjoy the game with premium features!</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Testimonials Section -->
+        <div class="testimonials">
+            <h3>What Our Users Say</h3>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">J</div>
+                        <div>
+                            <div class="testimonial-name">John D.</div>
+                            <div class="testimonial-date">2 days ago</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-text">
+                        The Genshin Impact mod worked perfectly! Got 10k primogems daily with no ban. Highly recommend!
+                    </div>
+                    <div class="testimonial-rating">★★★★★</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">S</div>
+                        <div>
+                            <div class="testimonial-name">Sarah K.</div>
+                            <div class="testimonial-date">1 week ago</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-text">
+                        Finally unlocked all Roblox items for free. The survey only took 30 seconds. Worth it!
+                    </div>
+                    <div class="testimonial-rating">★★★★☆</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">M</div>
+                        <div>
+                            <div class="testimonial-name">Mike T.</div>
+                            <div class="testimonial-date">3 days ago</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-text">
+                        I was skeptical at first but the Wuthering Waves mod actually delivers unlimited resources. Amazing!
+                    </div>
+                    <div class="testimonial-rating">★★★★★</div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- الفوتر -->
+    <!-- Footer -->
     <div class="footer">
         <div class="footer-links">
-            <a href="#">سياسة الخصوصية</a>
-            <a href="#">شروط الاستخدام</a>
-            <a href="#">اتصل بنا</a>
-            <a href="#">حول الموقع</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Contact Us</a>
+            <a href="#">About</a>
         </div>
-        <div class="copyright">© 2023 بريميوم جيم مودز. جميع الحقوق محفوظة.</div>
+        <div class="copyright">© 2023 Premium Game Mods Hub. All Rights Reserved.</div>
     </div>
 
-    <!-- صفحة تثبيت وهمية (ستظهر عند النقر على أي لعبة) -->
+    <!-- Install Guide Modal (Hidden by default) -->
     <div id="installGuideModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 10000; overflow-y: auto; padding: 20px;">
         <div class="install-page">
             <div class="game-header">
@@ -634,68 +748,66 @@
                 <h1 class="game-title-large" id="guideGameTitle">Wuthering Waves</h1>
             </div>
             
-            <h3>الميزات المتاحة في هذا المود:</h3>
+            <h3>Features in this mod:</h3>
             <ul class="features-list" id="guideGameFeatures">
-                <li>جميع الشخصيات مفتوحة</li>
-                <li>موارد غير محدودة (ذهب، أحجار، إلخ)</li>
-                <li>إزالة جميع الإعلانات</li>
-                <li>ميزات VIP مميزة</li>
+                <li>All characters unlocked</li>
+                <li>Unlimited resources (gold, gems, etc)</li>
+                <li>No ads</li>
+                <li>VIP premium features</li>
             </ul>
             
             <div class="download-steps">
-                <h3>خطوات التثبيت</h3>
+                <h3>Installation Steps</h3>
                 <div class="steps-container">
                     <div class="step">
                         <div class="step-number">1</div>
-                        <div class="step-content">اضغط على زر التنزيل بالأسفل</div>
+                        <div class="step-content">Click the download button below</div>
                     </div>
                     <div class="step">
                         <div class="step-number">2</div>
-                        <div class="step-content">افتح ملف APK بعد التنزيل</div>
+                        <div class="step-content">Open the APK file after downloading</div>
                     </div>
                     <div class="step">
                         <div class="step-number">3</div>
-                        <div class="step-content">اتبع التعليمات الظاهرة للتثبيت</div>
+                        <div class="step-content">Follow the on-screen instructions to install</div>
                     </div>
                     <div class="step">
                         <div class="step-number">4</div>
-                        <div class="step-content">استمتع باللعبة مع جميع الميزات!</div>
+                        <div class="step-content">Enjoy the game with all features!</div>
                     </div>
                 </div>
             </div>
             
-            <a href="#" class="fake-download-btn" id="fakeDownloadBtn">تنزيل المود الآن (APK)</a>
+            <a href="#" class="fake-download-btn" id="fakeDownloadBtn">Download Mod Now (APK)</a>
             
             <div style="text-align: center; margin-top: 30px;">
-                <button onclick="document.getElementById('installGuideModal').style.display='none'" style="background: #ff4757; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">إغلاق</button>
+                <button onclick="document.getElementById('installGuideModal').style.display='none'" style="background: #ff4757; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Close</button>
             </div>
         </div>
     </div>
 
     <script>
-        // القائمة الجانبية
+        // Sidebar toggle
         document.querySelector('.menu-btn').addEventListener('click', function() {
             document.querySelector('.sidebar').classList.toggle('active');
         });
 
-        // البحث عن الألعاب
+        // Game search
         document.getElementById('searchInput').addEventListener('input', function() {
             const searchTerm = this.value.toLowerCase();
             const gameCards = document.querySelectorAll('.game-card');
-            let visibleCount = 0;
-
+            
             gameCards.forEach(card => {
                 const gameName = card.getAttribute('data-game-name');
                 if (gameName.includes(searchTerm)) {
                     card.style.display = 'flex';
-                    visibleCount++;
                 } else {
                     card.style.display = 'none';
                 }
             });
         });
 
-        // محاكاة صفحة التثبيت عند النقر على أي لعبة
+        // Install guide modal
         document.querySelectorAll('.view-button').forEach(button => {
             button.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -722,11 +834,11 @@
             });
         });
 
-        // محاكاة التنزيل مع إظهار الـ Content Locker
+        // Fake download button (CPA redirect)
         document.getElementById('fakeDownloadBtn').addEventListener('click', function(e) {
             e.preventDefault();
-            if (confirm('لتنزيل الملف، يرجى إكمال تحقيق سريع. هل تريد المتابعة؟')) {
-                // هنا يمكنك توجيه المستخدم إلى صفحة OGAds أو CPA الخاصة بك
+            if (confirm('To download the file, please complete a quick verification. Continue?')) {
+                // Redirect to your CPA/OGAds locker
                 window.location.href = 'https://installchecker.com/cl/i/37xx77';
             }
         });
